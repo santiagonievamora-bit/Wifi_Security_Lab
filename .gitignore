@@ -1,0 +1,33 @@
+# Sistema operativo y editores
+.DS_Store
+.AppleDouble
+.LSOverride
+.vscode/
+
+# Capturas, hashes y diccionarios del laboratorio
+*.cap
+*.pcap
+*.pcapng
+*.22000
+*.hc22000
+*.hccapx
+*.potfile
+*.log
+diccionario*.txt
+wordlist*.txt
+evidence/
+captures/
+artifacts/
+
+# Secretos y archivos locales
+.env
+.env.*
+!.env.example
+*.key
+*.pem
+*.secret
+
+# Archivos temporales
+*.swp
+*.tmp
+*.bak
