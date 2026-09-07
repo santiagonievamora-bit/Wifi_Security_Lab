@@ -21,7 +21,8 @@ Laboratorio educativo para analizar la seguridad de redes WiFi ficticias mediant
 ```text
 .
 ├── docs/
-│   └── laboratorio.md       # Consigna, fases y metodología
+│   ├── laboratorio.md       # Consigna, fases y metodología
+│   └── fichas-empresariales.md # Perfiles ficticios para el ejercicio
 ├── templates/
 │   └── evidencia.md         # Plantilla para registrar cada objetivo
 ├── .gitignore
@@ -31,7 +32,7 @@ Laboratorio educativo para analizar la seguridad de redes WiFi ficticias mediant
 ## Inicio rápido
 
 1. Leer la [guía del laboratorio](docs/laboratorio.md).
-2. Crear una empresa y una red completamente ficticias.
+2. Elegir una ficha de [empresas ficticias](docs/fichas-empresariales.md) y crear una red completamente ficticia.
 3. Registrar el trabajo en una copia de [la plantilla de evidencias](templates/evidencia.md).
 4. Guardar capturas y artefactos locales fuera del repositorio.
 5. Revisar que no haya datos reales antes de compartir cambios.

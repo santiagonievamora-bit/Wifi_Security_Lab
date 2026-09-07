@@ -2,6 +2,11 @@
 
 ## 1. Empresa ficticia
 
+El proyecto incluye perfiles de referencia en [fichas empresariales](fichas-empresariales.md).
+Se puede elegir Best Games o EcoNova para comenzar el ejercicio. La ficha de
+DigitalSoftware está pendiente de transcripción porque el adjunto recibido no
+incluye texto legible suficiente.
+
 Crear una ficha sin nombres, fechas, teléfonos ni datos personales reales. Debe
 contener información suficiente para que el ejercicio sea reproducible, pero la
 contraseña no debe aparecer publicada de forma directa. Puede contener:
