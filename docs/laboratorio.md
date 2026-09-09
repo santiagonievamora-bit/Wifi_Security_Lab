@@ -2,10 +2,20 @@
 
 ## 1. Empresa ficticia
 
-El proyecto incluye perfiles de referencia en [fichas empresariales](fichas-empresariales.md).
-Se puede elegir Best Games o EcoNova para comenzar el ejercicio. La ficha de
-DigitalSoftware está pendiente de transcripción porque el adjunto recibido no
-incluye texto legible suficiente.
+El proyecto incluye perfiles de referencia en [fichas empresariales](fichas-empresariales%28tabla%29.md).
+Se puede elegir Best Games, EcoNova o DigitalSoft para comenzar el ejercicio.
+Las tres fichas empresariales están disponibles en el catálogo.
+
+Hay un informe individual en PDF para cada empresa en la carpeta
+[`reports/`](../reports/). El informe de DigitalSoftware contiene el procedimiento
+base, y ahora puede completarse con la ficha DigitalSoft.
+La correspondencia de los archivos de captura recibidos está documentada en el
+[registro de capturas](registro-capturas%20de%20red.md); los binarios deben permanecer fuera
+del repositorio.
+Los parámetros de AP y cliente están en [parametros de las redes](parametros%20de%20las%20redes.md).
+El equipo anfitrión, la máquina virtual Kali y la interfaz `wlan1` están
+documentados en [especificaciones de hardware y software para el laboratorio](especificaciones%20de%20hardware%20y%20software%20para%20el%20laboratorio.md). Los
+identificadores únicos del equipo se mantienen fuera del repositorio.
 
 Crear una ficha sin nombres, fechas, teléfonos ni datos personales reales. Debe
 contener información suficiente para que el ejercicio sea reproducible, pero la
@@ -22,9 +32,6 @@ contraseña no debe aparecer publicada de forma directa. Puede contener:
 | Mascota | Tuki |
 | Eslogan | Tecnologia que protege |
 
-La información puede compartirse en un documento, tablero o perfil ficticio creado
-exclusivamente para el ejercicio.
-
 ## 2. Contraseña de prueba
 
 La contraseña debe tener exactamente ocho caracteres, incluir letras y números, no
@@ -32,7 +39,7 @@ contener espacios y estar relacionada con la empresa. No debe publicarse antes d
 la evaluación.
 
 No se aceptan contraseñas completamente aleatorias, demasiado obvias, iguales al
-SSID o basadas en información real. Ejemplos didácticos: `Tuki2021`, `TucuTech`,
+SSID o basadas en información real. Ejemplos didácticos correctos: `Tuki2021`, `TucuTech`,
 `Sent2021` y `MarDia21`.
 
 ## 3. Punto de acceso

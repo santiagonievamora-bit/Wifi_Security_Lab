@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="es">
+<head><meta charset="utf-8"><title>Auditoria WiFi - DigitalSoftware</title><style>body{font:14px -apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;line-height:1.5;color:#202b3c;max-width:820px;margin:40px auto}h1{color:#394b70;border-bottom:3px solid #d08b45;padding-bottom:10px}h2{color:#394b70;margin-top:30px}h3{color:#8a5a2b}table{border-collapse:collapse;width:100%;margin:12px 0}td,th{border:1px solid #ccd2dc;padding:8px;text-align:left;vertical-align:top}th{background:#eef1f5}pre{background:#f2f3f5;border-left:4px solid #d08b45;padding:12px;white-space:pre-wrap}.note{background:#fff4df;padding:12px;border:1px solid #d08b45}</style></head>
+<body>
+<h1>Informe de auditoría WiFi: DigitalSoft</h1>
+<p><strong>Estado:</strong> ficha OSINT completada; captura de handshake documentada.</p>
+<div class="note"><strong>Alcance:</strong> DigitalSoft es una empresa ficticia. La evaluación se limita al AP, cliente y captura autorizados del laboratorio.</div>
+<h2>1. Resumen ejecutivo</h2><p>Se documenta una evaluación externa y autorizada de una red WiFi ficticia de DigitalSoft. El objetivo es registrar la captura de un handshake a partir de los datos confirmados de la empresa: desarrollo de software a medida, Enzo Gómez, Salta, Landing Page, Doki, la fecha 02/11 y la publicación de 2022.</p>
+<h2>2. Objetivos</h2><ul><li>Definir el AP, cliente y canal autorizados.</li><li>Capturar un handshake por reconexión manual del cliente propio.</li><li>Documentar el procedimiento y las evidencias de captura sin probar sistemas ajenos.</li></ul>
+<h2>3. Metodología OWISAM y alcance</h2><p>Se toma OWISAM, <em>Open Wireless Security Assessment Methodology</em>, como referencia para reconocimiento, identificación, captura controlada y validación de autenticación inalámbrica. Referencia: <a href="https://www.owisam.org/">owisam.org</a>. El pentesting es externo de caja negra: el evaluador no dispone de administración del AP y solo utiliza el perímetro radioeléctrico del laboratorio.</p>
+<h2>4. Ficha empresarial</h2><p><strong>Parámetros de captura:</strong> BSSID del AP <code>8E:75:F8:BA:9F:9E</code>; MAC del cliente propio <code>B2:58:73:0C:D6:41</code>. La plataforma y la interfaz inalámbrica están documentadas en <a href="../docs/hardware_software-laboratorio.md">hardware_software-laboratorio.md</a>.</p>
+<h2>5. Procedimiento reproducible</h2>
+<h3>6.1 Reconocimiento</h3><pre>sudo airodump-ng wlan1mon
+</pre><p>Seleccionar únicamente el AP preparado para DigitalSoft: BSSID <code>8E:75:F8:BA:9F:9E</code> y cliente propio <code>B2:58:73:0C:D6:41</code>.</p>
+<h3>6.2 Captura</h3><p>Con <code>sudo airodump-ng -c 1 --bssid 8E:75:F8:BA:9F:9E wlan1 -w pruebared</code> corriendo, en otra ventana de la terminal se desautentica al cliente con <code>sudo aireplay-ng -0 9 -a 8E:75:F8:BA:9F:9E -c B2:58:73:0C:D6:41 wlan1</code>.</p>
+<p>La captura se registra en <code>pruebared-01.cap</code> y se debe verificar la aparición de <code>WPA handshake</code> antes de detener el proceso.</p>
+<p>Captura asignada: <code>handshake-jorge.cap</code>, con SSID <code>DigitalSoft</code>. Conservar el archivo fuera de Git y registrar la aparición del mensaje <code>WPA handshake</code>.</p>
+</body></html>

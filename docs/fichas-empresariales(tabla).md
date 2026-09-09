@@ -4,9 +4,6 @@ Perfiles OSINT de referencia para el laboratorio. Toda la información de este
 archivo es ficticia y se utiliza únicamente para construir hipótesis de
 contraseñas dentro de una red propia y autorizada.
 
-> No se incluyen credenciales, contraseñas ni capturas. Los archivos de captura y
-> diccionarios deben permanecer fuera del repositorio según la guía del laboratorio.
-
 ## 1. Best Games
 
 | Campo | Información |
@@ -43,10 +40,6 @@ contraseñas dentro de una red propia y autorizada.
 >
 > No te olvides de asistir al evento Game Jam el 22 de julio, aquí realizaremos conferencias y sorteos de keys de nuestros productos.
 
-**Nota de privacidad:** se excluyeron de esta ficha el DNI y la fecha de
-nacimiento proporcionados en el material de origen. Aunque el escenario sea
-ficticio, no son necesarios para el ejercicio.
-
 ## 2. EcoNova
 
 | Campo | Información |
@@ -78,16 +71,24 @@ ficticio, no son necesarios para el ejercicio.
 >
 > `#EcoNova #TecnologíaSustentable #CuidemosElPlaneta`
 
-## 3. DigitalSoftware
+## 3. DigitalSoft
 
-La ficha de DigitalSoftware queda registrada como **pendiente de transcripción**.
-El adjunto recibido contiene únicamente los primeros bytes del encabezado RTF y
-no permite recuperar de forma confiable el nombre, rubro, fechas, productos,
-usuarios ni publicación ficticia.
+| Campo | Información |
+| --- | --- |
+| Empresa | DigitalSoft |
+| Rubro | Desarrollo de software a medida |
+| Fundación | 2020 |
+| Fundador | Enzo Gómez |
+| Ciudad | Salta |
+| Producto principal | Landing Page |
+| Mascota corporativa | Doki |
+| Eslogan | La solución a tus problemas está en nuestras manos |
+| Fecha significativa | 02 de noviembre (`02/11`) |
+| Usuario ficticio | `@digitaltuc_arg` |
 
-Para completarla, reemplazar esta sección con el texto legible del documento
-original. No se deben inferir datos a partir del nombre del archivo ni generar
-información faltante.
+### Publicación ficticia
+
+> En 2022 resolvimos este problema que inquietaba a nuestros clientes de liryc.
 
 ## Uso en el laboratorio
 
@@ -95,5 +96,4 @@ Para cada empresa seleccionada:
 
 1. Elegir un SSID propio basado en la ficha.
 2. Registrar las palabras base y reglas en una copia de la [plantilla de evidencias](../templates/evidencia.md).
-3. Generar y conservar el diccionario fuera del repositorio.
-4. No publicar la contraseña de prueba junto con el perfil.
+3. Generar y conservar el diccionario para encontrar la clave.

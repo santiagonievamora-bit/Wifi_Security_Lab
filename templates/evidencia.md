@@ -1,6 +1,6 @@
 # Evidencia del laboratorio
 
-> Completar una copia por cada red ficticia. No incluir datos personales reales ni
+> Completar una copia por cada red de empresa ficticia. No incluir datos personales reales ni
 > subir capturas o credenciales al repositorio público.
 
 ## Identificación
@@ -44,4 +44,3 @@
 - [ ] No se utilizaron datos reales.
 - [ ] La captura es válida y corresponde al BSSID autorizado.
 - [ ] El procedimiento es reproducible.
-- [ ] Se revisó que no haya secretos ni artefactos sensibles en Git.
