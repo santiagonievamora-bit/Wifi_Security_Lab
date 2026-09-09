@@ -86,6 +86,18 @@ fuera del repositorio o en un almacenamiento privado.
 
 ## 6. Cierre técnico
 
-Explicar qué información permitió construir la hipótesis, qué debilidad fue
-demostrada y cómo se mitigaría: mayor longitud, aleatoriedad, WPA3 cuando esté
-disponible, rotación de credenciales y separación de la red de invitados.
+El análisis mostró que la información asociada a la empresa ficticia permitió
+construir un diccionario contextualizado y reducir el espacio de búsqueda de la
+credencial. La captura del handshake y su validación con el diccionario de
+prueba demostraron que una contraseña corta, predecible o relacionada con datos
+del perfil empresarial ofrece una resistencia insuficiente frente a un ataque
+offline. El resultado no implica acceso a redes reales ni permite extrapolarlo a
+otras redes sin evaluar su configuración y sus credenciales.
+
+La mitigación recomendada es utilizar contraseñas largas, aleatorias y únicas,
+evitar datos del nombre o actividad de la organización, activar WPA3 cuando sea
+compatible, rotar las credenciales con una política definida y separar la red
+de invitados de los sistemas internos. La evidencia debe conservar el comando,
+la herramienta, el tiempo y el resultado de forma reproducible, pero no debe
+publicar la credencial recuperada, los diccionarios completos ni las capturas de
+red.

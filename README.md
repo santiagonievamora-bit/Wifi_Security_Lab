@@ -76,4 +76,11 @@ Cada entrega debe incluir una descripción reproducible del procedimiento, evide
 técnicas sin información sensible, la relación entre la contraseña y la empresa
 ficticia, el tiempo aproximado y una recomendación de seguridad.
 
+## Cierre técnico
+
+El [cierre técnico de la guía](docs/laboratorio.md#6-cierre-técnico) relaciona
+la información utilizada para construir el diccionario, la debilidad demostrada
+y las medidas de mitigación. La publicación debe omitir credenciales,
+diccionarios completos y capturas de red.
+
 
