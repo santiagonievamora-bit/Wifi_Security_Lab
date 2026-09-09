@@ -4,18 +4,15 @@
 
 El proyecto incluye perfiles de referencia en [fichas empresariales](fichas-empresariales%28tabla%29.md).
 Se puede elegir Best Games, EcoNova o DigitalSoft para comenzar el ejercicio.
-Las tres fichas empresariales están disponibles en el catálogo.
+Las tres fichas empresariales sin procesar están disponibles en el catálogo.
 
 Hay un informe individual en PDF para cada empresa en la carpeta
-[`reports/`](../reports/). El informe de DigitalSoftware contiene el procedimiento
-base, y ahora puede completarse con la ficha DigitalSoft.
-La correspondencia de los archivos de captura recibidos está documentada en el
-[registro de capturas](registro-capturas%20de%20red.md); los binarios deben permanecer fuera
+[`reports/`](../reports/).
+La correspondencia de los archivos de captura recibidos está documentada en el [registro de capturas](registro-capturas%20de%20red.md); los binarios deben permanecer fuera
 del repositorio.
-Los parámetros de AP y cliente están en [parametros de las redes](parametros%20de%20las%20redes.md).
-El equipo anfitrión, la máquina virtual Kali y la interfaz `wlan1` están
-documentados en [especificaciones de hardware y software para el laboratorio](especificaciones%20de%20hardware%20y%20software%20para%20el%20laboratorio.md). Los
-identificadores únicos del equipo se mantienen fuera del repositorio.
+Los parámetros de AP y cliente desautenticado están en [parametros de las redes](parametros%20de%20las%20redes.md).
+Las especificaciones de equipo anfitrión, la máquina virtual Kali y la interfaz `wlan1` están
+documentados en [especificaciones de hardware y software para el laboratorio](especificaciones%20de%20hardware%20y%20software%20para%20el%20laboratorio.md).
 
 Crear una ficha sin nombres, fechas, teléfonos ni datos personales reales. Debe
 contener información suficiente para que el ejercicio sea reproducible, pero la
@@ -35,8 +32,7 @@ contraseña no debe aparecer publicada de forma directa. Puede contener:
 ## 2. Contraseña de prueba
 
 La contraseña debe tener exactamente ocho caracteres, incluir letras y números, no
-contener espacios y estar relacionada con la empresa. No debe publicarse antes de
-la evaluación.
+contener espacios y estar relacionada con la empresa.
 
 No se aceptan contraseñas completamente aleatorias, demasiado obvias, iguales al
 SSID o basadas en información real. Ejemplos didácticos correctos: `Tuki2021`, `TucuTech`,
@@ -63,21 +59,24 @@ de monitorización autorizada.
 
 ### Captura
 
-Capturar tráfico únicamente del BSSID y canal definidos para la práctica. Obtener
-el handshake o PMKID mediante una reconexión manual siempre que sea posible. Si se
+Capturar tráfico únicamente del BSSID y canal definidos para la práctica. Obtener el handshake o PMKID mediante una reconexión manual siempre que sea posible. Si se
 usa desautenticación controlada, debe ser breve y dirigida a un dispositivo propio.
 
 ### Diccionario
 
 Partir de las palabras del perfil ficticio y documentar las reglas usadas para
 generar combinaciones de ocho caracteres. Filtrar duplicados y conservar el
-diccionario exacto utilizado en la evidencia.
+diccionario exacto utilizado en la evidencia. Consultar la [documentación de
+diccionarios](Diccionarios.md) y la sección de validación del reporte HTML
+correspondiente.
 
 ### Validación
 
 Probar la captura con Aircrack-ng o convertirla al formato compatible con Hashcat.
 Registrar el comando, la herramienta, el tiempo y el resultado sin publicar
-credenciales fuera del entorno de evaluación.
+credenciales fuera del entorno de evaluación. La distribución de tareas de la suite Aircrack-ng entre
+la máquina anfitriona y la VM está descrita en las [especificaciones de
+hardware y software](especificaciones%20de%20hardware%20y%20software%20para%20el%20laboratorio.md).
 
 ## 5. Evidencias
 

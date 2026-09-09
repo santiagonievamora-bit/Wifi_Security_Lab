@@ -1,6 +1,6 @@
 # WiFi Security Lab
 
-Laboratorio educativo para analizar la seguridad de redes WiFi ficticias mediante OSINT, generación de diccionarios y verificación controlada de credenciales.
+Laboratorio para analizar la seguridad de redes WiFi ficticias mediante OSINT, generación de diccionarios y verificación controlada de credenciales.
 
 > **Aviso de autorización**
 > Todo el trabajo debe realizarse únicamente sobre redes, dispositivos y datos
@@ -25,6 +25,7 @@ Laboratorio educativo para analizar la seguridad de redes WiFi ficticias mediant
 │   ├── fichas-empresariales(tabla).md                     # Perfiles ficticios para el ejercicio
 │   ├── registro-capturas de red.md                        # Asociación y estado de los handshakes
 │   ├── parametros de las redes.md                         # AP, BSSID y cliente propios ficticios
+│   ├── Diccionarios.md                                     # Generación de diccionarios personalizados
 │   └── especificaciones de hardware y software para el laboratorio.md # Equipo anfitrión, VM y wlan1
 ├── reports/
 │   ├── informe-best-games.pdf       # Informe individual en PDF
@@ -41,8 +42,10 @@ Laboratorio educativo para analizar la seguridad de redes WiFi ficticias mediant
 1. Leer la [guía del laboratorio](docs/laboratorio.md).
 2. Elegir una ficha de [empresas ficticias](docs/fichas-empresariales%28tabla%29.md) y crear una red completamente ficticia.
 3. Registrar el trabajo en una copia de [la plantilla de evidencias](templates/evidencia.md).
-4. Guardar capturas y artefactos locales fuera del repositorio.
-5. Revisar que no haya datos reales antes de compartir cambios.
+4. Consultar la [generación de diccionarios](docs/Diccionarios.md) y documentar el archivo exacto utilizado.
+5. Revisar la evidencia del ataque de diccionario incluida en cada reporte HTML.
+6. Guardar capturas y artefactos locales fuera del repositorio.
+7. Revisar que no haya datos reales antes de compartir cambios.
 
 El hardware y el entorno de ejecución están documentados en
 [especificaciones de hardware y software para el laboratorio.md](docs/especificaciones%20de%20hardware%20y%20software%20para%20el%20laboratorio.md), incluida la interfaz
@@ -52,8 +55,10 @@ El hardware y el entorno de ejecución están documentados en
 
 Los informes individuales están disponibles en [Best Games](reports/informe-best-games.pdf),
 [EcoNova](reports/informe-econova.pdf) y [DigitalSoft](reports/informe-digitalsoftware.pdf).
-Sus fuentes HTML editables están en la misma carpeta. Los PDFs contienen el
-procedimiento, comandos corregidos, campos de evidencia y análisis de riesgos.
+Sus fuentes HTML editables están en la misma carpeta e incluyen referencias a
+la [generación de diccionarios](docs/Diccionarios.md), los comandos de
+Aircrack-ng y sus resultados. Los PDFs contienen el procedimiento, comandos
+corregidos, campos de evidencia y análisis de riesgos.
 
 ## Alcance
 

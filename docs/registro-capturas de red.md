@@ -5,20 +5,19 @@ Este registro documenta los archivos `.cap` encontrados a apartir de el procedim
  
 ## Resumen
 
-| Archivo recibido | Tamaño indicado | SSID visible | Asociación | BSSID/AP observado | Cliente propio asignado | Estado |
+| Archivo de captura | Tamaño indicado | SSID visible | Asociación | BSSID/AP observado | Cliente propio asignado | Estado |
 | --- | ---: | --- | --- | --- | --- | --- |
-| `handshake-82-18-48-75-E3-76.cap` | 273.581 bytes | `Best Games` | Best Games | `82:18:48:75:E3:76` | `7A:4C:91:2E:B7:08` | BSSID visible en la cabecera; falta validar la captura completa |
-| `handshake-jorge.cap` | 281.894 bytes | `DigitalSoft` | DigitalSoft | `8E:75:F8:BA:9F:9E` | `B2:58:73:0C:D6:41` | BSSID visible en la cabecera; falta validar la captura completa |
-| `handshake-01.cap` | 367.330 bytes | `Novacorp.srl` | EcoNova | `8E:7F:6E:F3:B2:B8` | `6E:39:A4:71:C2:0D` | BSSID visible en la cabecera; falta validar la captura completa |
+| `handshake-82-18-48-75-E3-76.cap` | 273.581 bytes | `Best Games` | Best Games | `82:18:48:75:E3:76` | `7A:4C:91:2E:B7:08` | Válida (1 handshake)|
+
+| `handshake-jorge.cap` | 281.894 bytes | `DigitalSoft` | DigitalSoft | `8E:75:F8:BA:9F:9E` | `B2:58:73:0C:D6:41` | Válida (1 handshake)|
+
+| `handshake-01.cap` | 367.330 bytes | `Novacorp.srl` | EcoNova | `8E:7F:6E:F3:B2:B8` | `6E:39:A4:71:C2:0D` | Válida (1 handshake)|
 
 ## Verificación local
 
 Con cada archivo almacenado:
 
 aircrack-ng <BSSID> /ruta/privada/handshake.cap
-
-Este comando debe ejecutarse solo con un diccionario autorizado y sobre el
-BSSID del laboratorio.
 
 ## Resultado por empresa
 

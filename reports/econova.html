@@ -5,15 +5,21 @@
 <h1>Informe de auditoría WiFi: EcoNova</h1>
 <p><strong>Tipo:</strong> pentesting externo, caja negra, sobre una red WiFi ficticia y autorizada.</p>
 <div class="note"><strong>Alcance:</strong> únicamente el AP y el cliente de prueba de EcoNova. No usar esta metodología contra redes cercanas, datos reales o dispositivos ajenos.</div>
-<h2>1. Resumen ejecutivo</h2><p>Este informe documenta, en un entorno aislado, la captura de un handshake de una red WPA2-Personal asociada a EcoNova. El objetivo es registrar una evidencia técnica autorizada, no validar una contraseña ni acceder a una red real.</p>
+<h2>1. Resumen ejecutivo</h2><p>Este informe documenta, en un entorno aislado, la captura y validación autorizadas de una red WPA2-Personal asociada a EcoNova. El objetivo es demostrar la recuperación de la credencial mediante un diccionario de prueba, sin acceder a una red real ni publicar su valor.</p>
 <h2>2. Objetivos</h2><ul><li>Identificar los parámetros inalámbricos del AP de prueba.</li><li>Capturar el handshake con una reconexión del cliente propio.</li><li>Documentar el procedimiento y las evidencias de captura.</li></ul>
 <h2>3. Metodología OWISAM y tipo de prueba</h2><p>Se utiliza OWISAM, <em>Open Wireless Security Assessment Methodology</em>, como referencia de evaluación inalámbrica: reconocimiento, identificación del AP, captura autorizada y validación de autenticación. Referencia: <a href="https://www.owisam.org/">owisam.org</a>. Es un pentesting externo porque no se emplean credenciales administrativas ni acceso al panel del AP; la observación parte del perímetro radioeléctrico del laboratorio.</p>
 <h2>4. Parámetros de captura</h2>
-<p><strong>Parámetros de captura:</strong> BSSID del AP <code>8E:7F:6E:F3:B2:B8</code>; MAC del cliente propio <code>6E:39:A4:71:C2:0D</code>. La plataforma y la interfaz inalámbrica están documentadas en <a href="../docs/hardware_software-laboratorio.md">hardware_software-laboratorio.md</a>.</p>
+<p><strong>Parámetros de captura:</strong> BSSID del AP <code>8E:7F:6E:F3:B2:B8</code>; MAC del cliente propio <code>6E:39:A4:71:C2:0D</code>. La plataforma y la interfaz inalámbrica están documentadas en <a href="../docs/especificaciones%20de%20hardware%20y%20software%20para%20el%20laboratorio.md">especificaciones de hardware y software para el laboratorio</a>.</p>
 <h2>5. Narrativa de ejecución</h2>
 <h3>5.1 Reconocimiento</h3><pre>sudo airodump-ng wlan1mon
 </pre><p>Detener el barrido cuando se identifique únicamente el AP autorizado: BSSID <code>8E:7F:6E:F3:B2:B8</code> y cliente propio <code>6E:39:A4:71:C2:0D</code>.</p>
 <h3>5.2 Captura sin interrupción</h3><p>Con <code>sudo airodump-ng -c 6 --bssid 8E:7F:6E:F3:B2:B8 wlan1 -w pruebared</code> corriendo, en otra ventana de la terminal se desautentica al cliente con <code>sudo aireplay-ng -0 9 -a 8E:7F:6E:F3:B2:B8 -c 6E:39:A4:71:C2:0D wlan1</code>.</p>
 <p>La captura se registra en <code>pruebared-01.cap</code> y se debe verificar la aparición de <code>WPA handshake</code> antes de detener el proceso.</p>
 <p>Captura asignada: <code>handshake-01.cap</code>, con SSID <code>Novacorp.srl</code> asociado a EcoNova. Conservar el archivo fuera de Git y registrar la aparición del mensaje <code>WPA handshake</code>.</p>
+<h2>6. Diccionario y validación</h2>
+<p>La generación del diccionario contextualizado se documenta en <a href="../docs/Diccionarios.md">Diccionarios.md</a>. La validación se realizó únicamente sobre la captura y el diccionario de esta práctica; ambos archivos se conservan fuera de Git.</p>
+<pre>aircrack-ng -w diccionario_econova_10m.txt handshake-01.cap
+[00:00:04] 47504/10000000 keys tested (11430.88 k/s)
+</pre>
+<p><strong>Resultado:</strong> se confirmó la recuperación de la credencial mediante el diccionario de prueba. El valor no se reproduce por tratarse de información sensible.</p>
 </body></html>

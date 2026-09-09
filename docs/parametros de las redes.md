@@ -1,7 +1,6 @@
 # Parámetros de las redes
 
-Los BSSID del AP se transcriben de las cabeceras visibles de los handshakes
-recibidos. Deben confirmarse con el archivo `.cap` completo antes de ejecutar
+Los BSSID del AP se obtienen de airodump-ng. También están contenidas en el archivo `.cap`. Se debe verificar esto antes de ejecutar
 Aircrack-ng. Las MAC de cliente son identificadores privados asignados a los tres dispositivos propios del laboratorio.
 
 | Empresa | SSID documentado | BSSID/AP observado | Cliente propio asignado | Canal | Cifrado |

